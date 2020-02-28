@@ -3,7 +3,7 @@ DST=$(patsubst %.c,%,$(SRC))
 
 default: $(DST)
 
-$(DST): $(SRC) handler.S
+$(DST): $(SRC) usys.S
 	gcc -o $@ $^
 
 clean:

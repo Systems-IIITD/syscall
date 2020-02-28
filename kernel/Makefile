@@ -5,7 +5,7 @@ MODULE_NAME=cse231
 
 ifneq ($(KERNELRELEASE),)
 
-$(MODULE_NAME)-y += main.o handler.o klib.o
+$(MODULE_NAME)-y += main.o ksys.o klib.o
 obj-m	+= $(MODULE_NAME).o
 
 else
