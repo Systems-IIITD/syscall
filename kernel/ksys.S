@@ -3,9 +3,10 @@
 
 # syscall_handler_k routine in klib.c implements the actual system
 # call handler. The arguments to syscall_handler_k are passed on the
-# stack. Kernel's %fs segment register value is 216 that may be different
-# from user applications. Kernel doesn't use %gs segment register.
-# %ds and %es are the same for user and kernel.
+# stack. Kernel uses __KERNEL_PERCPU and __KERNEL_STACK_CANARY for
+# %fs and %gs that may be different from user applications.
+# Kernel uses __USER_DS for %ds and %es.
+# You can assume that user and kernel use the same %ds and %es.
 
 #void syscall_handler_k(int id, void *arg);
 
